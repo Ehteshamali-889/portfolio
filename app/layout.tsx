@@ -3,16 +3,26 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   applicationName: "Ehtesham Ali Portfolio",
-  title: "Ehtesham Ali — Software Engineer",
+  title: "Ehtesham Ali — Software Engineer & AI Developer",
   description:
-    "Full-stack software engineer building scalable, production-ready web and mobile applications.",
+    "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
   keywords: [
     "Ehtesham Ali",
     "software engineer",
     "full-stack developer",
+    "AI developer",
+    "AI engineer",
     "React developer",
     "Node.js developer",
     "React Native developer",
+    "LLM integration",
+    "OpenAI API",
+    "Anthropic Claude API",
+    "LangChain developer",
+    "RAG pipelines",
+    "AI agents",
+    "prompt engineering",
+    "vector databases",
     "web application development",
     "mobile application development",
   ],
@@ -33,17 +43,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Ehtesham Ali — Software Engineer",
+    title: "Ehtesham Ali — Software Engineer & AI Developer",
     description:
-      "Full-stack software engineer building scalable, production-ready web and mobile applications.",
+      "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
     siteName: "Ehtesham Ali Portfolio",
     locale: "en_US",
   },
   twitter: {
     card: "summary",
-    title: "Ehtesham Ali — Software Engineer",
+    title: "Ehtesham Ali — Software Engineer & AI Developer",
     description:
-      "Full-stack software engineer building scalable, production-ready web and mobile applications.",
+      "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
   },
 };
 
