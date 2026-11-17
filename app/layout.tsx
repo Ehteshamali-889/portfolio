@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const title = "Ehtesham Ali | Software Engineer";
-const description =
-  "Explore Ehtesham Ali's portfolio: full-stack web and mobile applications, backend systems, API integrations, and database design.";
 const siteUrl = process.env.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -22,21 +8,60 @@ const siteUrl = process.env.SITE_URL ||
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
-  description,
   alternates: { canonical: "/" },
+  applicationName: "Ehtesham Ali Portfolio",
+  title: "Ehtesham Ali — Software Engineer & AI Developer",
+  description:
+    "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
+  keywords: [
+    "Ehtesham Ali",
+    "software engineer",
+    "full-stack developer",
+    "AI developer",
+    "AI engineer",
+    "React developer",
+    "Node.js developer",
+    "React Native developer",
+    "LLM integration",
+    "OpenAI API",
+    "Anthropic Claude API",
+    "LangChain developer",
+    "RAG pipelines",
+    "AI agents",
+    "prompt engineering",
+    "vector databases",
+    "web application development",
+    "mobile application development",
+  ],
+  authors: [{ name: "Ehtesham Ali" }],
+  creator: "Ehtesham Ali",
+  publisher: "Ehtesham Ali",
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
     url: "/",
+    title: "Ehtesham Ali — Software Engineer & AI Developer",
+    description:
+      "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
     siteName: "Ehtesham Ali Portfolio",
-    title,
-    description,
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: "Ehtesham Ali — Software Engineer & AI Developer",
+    description:
+      "Full-stack software engineer and AI developer building scalable, production-ready web, mobile, and LLM-powered applications.",
   },
 };
 
@@ -46,11 +71,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
