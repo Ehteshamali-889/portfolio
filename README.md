@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Social link previews
+
+The root layout includes Open Graph and Twitter Card metadata. `app/opengraph-image.tsx`
+generates the 1200×630 PNG preview; Twitter uses the same artwork.
+
+For a custom domain or non-Vercel hosting, set `SITE_URL` to the public HTTPS origin
+before building (see `.env.example`). Otherwise Vercel's production domain is used;
+local development falls back to `http://localhost:3000`.
+
+After deploying, check the page source for absolute `og:image` and `twitter:image`
+URLs and confirm those URLs are publicly accessible. Social apps cache previews;
+existing shares may retain the old card until the platform refreshes its cache.
+
 ## Getting Started
 
 First, run the development server:
