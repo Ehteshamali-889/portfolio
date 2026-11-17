@@ -4,7 +4,15 @@ import "./globals.css";
 const siteUrl = process.env.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+    : "https://ehtesham-ali-portfolio.netlify.app");
+
+const socialImage = {
+  url: new URL("/social-preview-v2.jpg", siteUrl).toString(),
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+  alt: "Ehtesham Ali — Software Engineer & AI Developer",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -49,6 +57,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [socialImage],
     type: "website",
     url: "/",
     title: "Ehtesham Ali — Software Engineer & AI Developer",
@@ -58,6 +67,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: {
+    images: [socialImage],
     card: "summary_large_image",
     title: "Ehtesham Ali — Software Engineer & AI Developer",
     description:

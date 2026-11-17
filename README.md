@@ -2,16 +2,22 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Social link previews
 
-The root layout includes Open Graph and Twitter Card metadata. `app/opengraph-image.tsx`
-generates the 1200Ã—630 PNG preview; Twitter uses the same artwork.
+The root layout provides Open Graph metadata for WhatsApp, Facebook, Threads,
+LinkedIn and other compatible clients, plus a large-image Twitter/X card.
+`public/social-preview-v2.jpg` is a static 1200×630 JPEG with its key content
+inside the central square to tolerate thumbnail cropping. Regenerate it with
+`node scripts/generate-social-preview.mjs` (uses Next.js's installed sharp dependency).
 
-For a custom domain or non-Vercel hosting, set `SITE_URL` to the public HTTPS origin
-before building (see `.env.example`). Otherwise Vercel's production domain is used;
-local development falls back to `http://localhost:3000`.
+The production origin defaults to `https://ehtesham-ali-portfolio.netlify.app`.
+Set `SITE_URL` before building if moving to another domain. Vercel deployments
+can also use `VERCEL_PROJECT_PRODUCTION_URL`.
 
-After deploying, check the page source for absolute `og:image` and `twitter:image`
-URLs and confirm those URLs are publicly accessible. Social apps cache previews;
-existing shares may retain the old card until the platform refreshes its cache.
+After deployment, check the page source for absolute `og:image` and `twitter:image`
+URLs and verify the JPEG returns HTTP 200 with `image/jpeg`. Platforms control
+card size, cropping, preview availability and caching; metadata cannot force a
+particular layout or make every Instagram surface show a website card.
+Refresh Facebook's cache with Sharing Debugger and LinkedIn's with Post Inspector.
+Already-sent WhatsApp messages may keep the old preview; test a new share.
 
 ## Getting Started
 
